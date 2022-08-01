@@ -12,11 +12,11 @@ app.use(express.json())
 app.use(cors())
 app.use("/uploads",express.static(path.join(__dirname, "uploads")))
 const url = "mongodb://localhost/BreadSale"
-const uri = "mongodb+srv://Colin:0000colin0000@cluster0.inp1i.mongodb.net/Breadoo?retryWrites=true&w=majority"
+const uri = ""
 
 const io = new Server(server, {cors:{origin: "*"}})
 
-mongoose.connect(uri, {useUnifiedTopology: true, useNewURLParser: true}).then(()=>{
+mongoose.connect(url, {useUnifiedTopology: true, useNewURLParser: true}).then(()=>{
     console.log(`connected to db`)
 }).catch((error)=>{
     console.log(error)
